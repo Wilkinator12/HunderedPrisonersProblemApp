@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="WpfUI.Views.NewSimulationView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfUI.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="1000">
+    <Grid>
+        <Border Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="5"
+                BorderBrush="Black" BorderThickness="1" Background="White"
+                Margin="0 0 0 20" Padding="10">
+
+            <StackPanel Orientation="Vertical"
+                        Margin="0 0 0 10">
+
+                <Label Content="Run New Simulations:"
+                       FontSize="20" FontWeight="Bold"/>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+
+                    <Label Content="Simulation Quantity: "/>
+                    <TextBox Text="{Binding SimulationQuantity, Mode=TwoWay}" 
+                             VerticalContentAlignment="Center"
+                             Width="100"/>
+
+                    <Label Content=" | "/>
+
+                    <Label Content="Prisoner Quantity: "/>
+                    <TextBox Text="{Binding PrisonerQuantity, Mode=TwoWay}"
+                             VerticalContentAlignment="Center"
+                             Width="100"/>
+
+                    <Label Content=" | "/>
+
+                    <Label Content="Prisoner Strategy: "/>
+                    <ComboBox ItemsSource="{Binding PrisonerStrategies}"
+                              SelectedItem="{Binding SelectedPrisonerStrategy}"
+                              VerticalContentAlignment="Center"
+                              Width="200"/>
+
+                    <Label Content=" | "/>
+
+                    <Button Content="Run Simulations"
+                            Command="{Binding RunSimulationCommand}"
+                            Padding="10 0"/>
+
+                </StackPanel>
+
+            </StackPanel>
+
+        </Border>
+    </Grid>
+</UserControl>

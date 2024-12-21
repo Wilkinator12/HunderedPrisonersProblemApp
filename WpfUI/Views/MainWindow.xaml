@@ -1,0 +1,63 @@
+﻿<Window x:Class="WpfUI.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfUI.Views"
+        mc:Ignorable="d"
+        Title="The 100 Prisoner Problem Simulator" Height="1080" Width="1920"
+        FontFamily="Segoe UI" FontSize="16"
+        Background="AntiqueWhite"
+        WindowState="Maximized">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+
+
+        <local:HeaderView Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5"
+                          Margin="0 0 0 20"/>
+
+
+        <local:NewSimulationView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="5"/>
+
+
+        <Label Content="Completed Simulations"
+               Grid.Row="2" Grid.Column="0"
+               FontSize="20" FontWeight="Bold"/>
+
+        <UserControl Grid.Row="3" Grid.Column="0">
+            <local:CompletedSimulationsView/>
+        </UserControl>
+
+
+        <Label Content="Selected Simulation"
+               Grid.Row="2" Grid.Column="2"
+               FontSize="20" FontWeight="Bold"/>
+
+        <UserControl Grid.Row="3" Grid.Column="2">
+            <local:SimulationInfoView/>
+        </UserControl>
+
+
+        <Label Content="Selected Prisoner's Box Selections"
+               Grid.Row="2" Grid.Column="4"
+               FontSize="20" FontWeight="Bold"/>
+
+        <UserControl Grid.Row="3" Grid.Column="4">
+            <local:BoxSelectionInfoView/>
+        </UserControl>
+
+    </Grid>
+</Window>

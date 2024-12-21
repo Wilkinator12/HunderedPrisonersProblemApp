@@ -1,0 +1,2 @@
+Check Random Boxes::The prisoners each check random boxes. The odds of success is nearly 0%.
+Follow Loops::Each prisoner first looks for the box labelled with their own number. If it contains their number, they succeed. If not, they go to the box labelled with the number they did find. They follow this pattern until they find their number or reach 50 boxes. The odds of success is near 30%.
