@@ -1,14 +1,14 @@
 ﻿using HunderedPrisonersProblemLibrary.Logic.Simulation.Abstractions;
-using HunderedPrisonersProblemLibrary.Logic.PrisonerAttempts.Abstractions;
+using HunderedPrisonersProblemLibrary.Logic.Attempts.Abstractions;
 using HunderedPrisonersProblemLibrary.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HunderedPrisonersProblemLibrary.Logic.PrisonerAttempts
+namespace HunderedPrisonersProblemLibrary.Logic.Attempts
 {
-    public class RandomBoxAttemptSimulator : IPrisonerAttemptSimulator
+    public class RandomBoxAttemptSimulator : IAttemptSimulator
     {
         private readonly IRiddleRules _gameRules;
         private readonly Random _rand;
@@ -20,23 +20,23 @@ namespace HunderedPrisonersProblemLibrary.Logic.PrisonerAttempts
         }
 
 
-        public PrisonerAttemptModel ExecuteAttempt(BoxRoomModel boxRoom, PrisonerModel prisoner)
+        public Attempt ExecuteAttempt(BoxRoom boxRoom, Prisoner prisoner)
         {
-            var output = new PrisonerAttemptModel()
+            var output = new Attempt()
             {
                 AttemptingPrisoner = prisoner
             };
 
 
             int numberOfBoxesToCheck = _gameRules.GetNumberOfBoxesToCheck(boxRoom);
-            var boxesLeftToCheck = new List<BoxModel>(boxRoom.Boxes);
+            var boxesLeftToCheck = new List<Box>(boxRoom.Boxes);
 
             for (int i = 0; i < numberOfBoxesToCheck; i++)
             {
                 int currentBoxIndex = _rand.Next(0, boxesLeftToCheck.Count);
                 var currentBox = boxesLeftToCheck[currentBoxIndex];
 
-                output.BoxSelections.Add(new BoxSelectionModel { SelectionNumber = i + 1, SelectedBox = currentBox });
+                output.BoxSelections.Add(new BoxSelection { SelectionNumber = i + 1, SelectedBox = currentBox });
 
                 if (currentBox.SlipNumber == prisoner.IdentityNumber)
                 {
@@ -51,7 +51,7 @@ namespace HunderedPrisonersProblemLibrary.Logic.PrisonerAttempts
             return output;
         }
 
-        public async Task<PrisonerAttemptModel> ExecuteAttemptAsync(BoxRoomModel boxRoom, PrisonerModel prisoner)
+        public async Task<Attempt> ExecuteAttemptAsync(BoxRoom boxRoom, Prisoner prisoner)
         {
             return ExecuteAttempt(boxRoom, prisoner);
         }

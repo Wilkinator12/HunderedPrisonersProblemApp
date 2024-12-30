@@ -8,7 +8,7 @@ namespace HunderedPrisonersProblemLibrary.Logic.Simulation
 {
     public class RiddleRules : IRiddleRules
     {
-        public int GetNumberOfBoxesToCheck(BoxRoomModel boxRoom)
+        public int GetNumberOfBoxesToCheck(BoxRoom boxRoom)
         {
             return boxRoom.Boxes.Count / 2;
         }

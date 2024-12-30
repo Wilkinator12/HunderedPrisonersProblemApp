@@ -1,30 +1,30 @@
 ﻿using HunderedPrisonersProblemLibrary.Logic.Simulation.Abstractions;
-using HunderedPrisonersProblemLibrary.Logic.PrisonerAttempts.Abstractions;
+using HunderedPrisonersProblemLibrary.Logic.Attempts.Abstractions;
 using HunderedPrisonersProblemLibrary.Models;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace HunderedPrisonersProblemLibrary.Logic.PrisonerAttempts
+namespace HunderedPrisonersProblemLibrary.Logic.Attempts
 {
-    public class PrisonerAttemptSimulatorManager : IPrisonerAttemptSimulatorManager
+    public class AttemptSimulatorManager : IAttemptSimulatorManager
     {
         private readonly IServiceProvider _serviceProvider;
 
-        public PrisonerAttemptSimulatorManager(IServiceProvider serviceProvider)
+        public AttemptSimulatorManager(IServiceProvider serviceProvider)
         {
             _serviceProvider = serviceProvider;
         }
 
-        public IPrisonerAttemptSimulator GetPrisonerAttemptSimulator(PrisonerStrategy strategy)
+        public IAttemptSimulator GetPrisonerAttemptSimulator(Strategy strategy)
         {
             switch (strategy)
             {
-                case PrisonerStrategy.CheckRandomBoxes:
+                case Strategy.CheckRandomBoxes:
                     return _serviceProvider.GetService<RandomBoxAttemptSimulator>();
 
-                case PrisonerStrategy.FollowLoops:
+                case Strategy.FollowLoops:
                     return _serviceProvider.GetService<FollowLoopAttemptSimulator>();
 
                 default:

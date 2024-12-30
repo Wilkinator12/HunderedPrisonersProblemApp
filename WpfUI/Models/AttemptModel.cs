@@ -3,10 +3,10 @@ using WpfUI.Bases;
 
 namespace WpfUI.Models
 {
-    public class PrisonerAttemptWpfModel : BindableBase
+    public class AttemptModel : BindableBase
     {
-        private PrisonerWpfModel _attemptingPrisoner = null!;
-        public PrisonerWpfModel AttemptingPrisoner
+        private PrisonerModel _attemptingPrisoner = null!;
+        public PrisonerModel AttemptingPrisoner
         {
             get => _attemptingPrisoner;
             set 
@@ -15,8 +15,8 @@ namespace WpfUI.Models
             }
         }
 
-        private ObservableCollection<BoxSelectionWpfModel> _boxSelections = new ObservableCollection<BoxSelectionWpfModel>();
-        public ObservableCollection<BoxSelectionWpfModel> BoxSelections
+        private ObservableCollection<BoxSelectionModel> _boxSelections = new ObservableCollection<BoxSelectionModel>();
+        public ObservableCollection<BoxSelectionModel> BoxSelections
         {
             get => _boxSelections;
             set

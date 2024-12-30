@@ -15,18 +15,18 @@ namespace ConsoleUI
         {
             ConfigureDependencyInjection();
 
-            var simFactory = serviceProvider.GetService<IPrisonerSimulationFactory>();
-            var simulationExecutor = serviceProvider.GetService<IPrisonerSimulationExecutor>();
+            var simFactory = serviceProvider.GetService<ISimulationFactory>();
+            var simulationExecutor = serviceProvider.GetService<ISimulationExecutor>();
             var analyzer = serviceProvider.GetService<IMultipleSimulationAnalyzer>();
 
 
             int numberOfSimulations = 1000;
-            var simulations = new List<PrisonerSimulationModel>();
+            var simulations = new List<Simulation>();
 
             for (int i = 0; i < numberOfSimulations; i++)
             {
                 var simulation = simFactory!.CreateSimulation(100);
-                simulationExecutor!.ExecuteSimulation(simulation, PrisonerStrategy.FollowLoops);
+                simulationExecutor!.ExecuteSimulation(simulation, Strategy.FollowLoops);
 
                 simulations.Add(simulation);
             }

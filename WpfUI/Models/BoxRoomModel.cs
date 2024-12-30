@@ -3,10 +3,10 @@ using WpfUI.Bases;
 
 namespace WpfUI.Models
 {
-    public class BoxRoomWpfModel : BindableBase
+    public class BoxRoomModel : BindableBase
     {
-        private ObservableCollection<BoxWpfModel> _boxes = new ObservableCollection<BoxWpfModel>();
-        public ObservableCollection<BoxWpfModel> Boxes
+        private ObservableCollection<BoxModel> _boxes = new ObservableCollection<BoxModel>();
+        public ObservableCollection<BoxModel> Boxes
         {
             get => _boxes;
             set 

@@ -3,10 +3,10 @@ using System.Linq;
 
 namespace HunderedPrisonersProblemLibrary.Models
 {
-    public class PrisonerAttemptModel
+    public class Attempt
     {
-        public PrisonerModel AttemptingPrisoner { get; set; }
-        public List<BoxSelectionModel> BoxSelections { get; set; } = new List<BoxSelectionModel>();
+        public Prisoner AttemptingPrisoner { get; set; }
+        public List<BoxSelection> BoxSelections { get; set; } = new List<BoxSelection>();
         public bool HasSucceeded { get; set; } = false;
         public bool AttemptComplete { get; set; } = false;
     }

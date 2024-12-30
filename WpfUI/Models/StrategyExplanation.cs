@@ -8,7 +8,7 @@ using WpfUI.Bases;
 
 namespace WpfUI.Models
 {
-    public class StrategyExplanationWpfModel : BindableBase
+    public class StrategyExplanation : BindableBase
     {
         private string _strategyName = string.Empty;
         public string StrategyName

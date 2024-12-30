@@ -1,5 +1,5 @@
 ﻿using HunderedPrisonersProblemLibrary.Logic.Simulation.Abstractions;
-using HunderedPrisonersProblemLibrary.Logic.PrisonerAttempts.Abstractions;
+using HunderedPrisonersProblemLibrary.Logic.Attempts.Abstractions;
 using HunderedPrisonersProblemLibrary.Models;
 using System;
 using System.Collections.Generic;
@@ -9,17 +9,17 @@ using System.Linq;
 
 namespace HunderedPrisonersProblemLibrary.Logic.Simulation
 {
-    public class PrisonerSimulationExecutor : IPrisonerSimulationExecutor
+    public class SimulationExecutor : ISimulationExecutor
     {
-        private readonly IPrisonerAttemptSimulatorManager _attemptManager;
+        private readonly IAttemptSimulatorManager _attemptManager;
 
-        public PrisonerSimulationExecutor(IPrisonerAttemptSimulatorManager attemptManager)
+        public SimulationExecutor(IAttemptSimulatorManager attemptManager)
         {
             _attemptManager = attemptManager;
         }
 
 
-        public void ExecuteSimulation(PrisonerSimulationModel simulation, PrisonerStrategy strategy)
+        public void ExecuteSimulation(Models.Simulation simulation, Strategy strategy)
         {
             var attemptSimulator = _attemptManager.GetPrisonerAttemptSimulator(strategy);
 
@@ -32,7 +32,7 @@ namespace HunderedPrisonersProblemLibrary.Logic.Simulation
             simulation.StrategyUsed = strategy;
         }
 
-        public async Task ExecuteSimulationAsync(PrisonerSimulationModel simulation, PrisonerStrategy strategy)
+        public async Task ExecuteSimulationAsync(Models.Simulation simulation, Strategy strategy)
         {
             var attemptSimulator = _attemptManager.GetPrisonerAttemptSimulator(strategy);
 

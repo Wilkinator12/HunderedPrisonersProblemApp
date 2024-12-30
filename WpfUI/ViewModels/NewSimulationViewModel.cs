@@ -11,8 +11,8 @@ namespace WpfUI.ViewModels
 {
     public class NewSimulationViewModel : BindableBase
     {
-        private readonly IPrisonerSimulationFactory _simulationFactory;
-        private readonly IPrisonerSimulationExecutor _simulationExecutor;
+        private readonly ISimulationFactory _simulationFactory;
+        private readonly ISimulationExecutor _simulationExecutor;
 
         private ISessionContext _sessionContext;
         public ISessionContext SessionContext
@@ -44,8 +44,8 @@ namespace WpfUI.ViewModels
             }
         }
 
-        private ObservableCollection<PrisonerStrategy> _prisonerStrategies;
-        public ObservableCollection<PrisonerStrategy> PrisonerStrategies
+        private ObservableCollection<Strategy> _prisonerStrategies;
+        public ObservableCollection<Strategy> PrisonerStrategies
         {
             get => _prisonerStrategies;
             set
@@ -54,8 +54,8 @@ namespace WpfUI.ViewModels
             }
         }
 
-        private PrisonerStrategy? _selectedPrisonerStrategy;
-        public PrisonerStrategy? SelectedPrisonerStrategy
+        private Strategy? _selectedPrisonerStrategy;
+        public Strategy? SelectedPrisonerStrategy
         {
             get => _selectedPrisonerStrategy;
             set 
@@ -72,16 +72,16 @@ namespace WpfUI.ViewModels
 
 
         public NewSimulationViewModel(ISessionContext sessionContext,
-                                      IPrisonerSimulationFactory simulationFactory,
-                                      IPrisonerSimulationExecutor simulationExecutor)
+                                      ISimulationFactory simulationFactory,
+                                      ISimulationExecutor simulationExecutor)
         {
             _sessionContext = sessionContext;
             _simulationFactory = simulationFactory;
             _simulationExecutor = simulationExecutor;
 
             _prisonerStrategies = 
-                new ObservableCollection<PrisonerStrategy>(
-                    Enum.GetValues(typeof(PrisonerStrategy)).Cast<PrisonerStrategy>());
+                new ObservableCollection<Strategy>(
+                    Enum.GetValues(typeof(Strategy)).Cast<Strategy>());
 
             RunSimulationCommand = new MyAsyncICommand(RunSimulationsAsync, CanRunSimulations);
             SessionContext.IsSimulatingChanged += (object? sender, EventArgs e) => RunSimulationCommand.RaiseCanExecuteChanged();
@@ -100,9 +100,9 @@ namespace WpfUI.ViewModels
 
                 var simulationTasks = simulationModels.Select(simulation => Task.Run(async () =>
                 {
-                    await _simulationExecutor.ExecuteSimulationAsync(simulation, (PrisonerStrategy)SelectedPrisonerStrategy);
+                    await _simulationExecutor.ExecuteSimulationAsync(simulation, (Strategy)SelectedPrisonerStrategy);
 
-                    return App.Mapper.Map<PrisonerSimulationWpfModel>(simulation);
+                    return App.Mapper.Map<SimulationModel>(simulation);
                 }));
 
                 var completedSimulations = await Task.WhenAll(simulationTasks);

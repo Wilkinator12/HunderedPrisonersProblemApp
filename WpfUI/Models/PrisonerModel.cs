@@ -2,7 +2,7 @@
 
 namespace WpfUI.Models
 {
-    public class PrisonerWpfModel : BindableBase
+    public class PrisonerModel : BindableBase
     {
 		private int _identityNumber;
 		public int IdentityNumber

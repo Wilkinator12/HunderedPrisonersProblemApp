@@ -1,8 +1,8 @@
 ﻿namespace HunderedPrisonersProblemLibrary.Models
 {
-    public class BoxSelectionModel
+    public class BoxSelection
     {
         public int SelectionNumber { get; set; }
-        public BoxModel SelectedBox { get; set; }
+        public Box SelectedBox { get; set; }
     }
 }

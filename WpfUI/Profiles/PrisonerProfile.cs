@@ -13,8 +13,8 @@ namespace WpfUI.Profiles
     {
         public PrisonerProfile()
         {
-            CreateMap<PrisonerModel, PrisonerWpfModel>();
-            CreateMap<PrisonerWpfModel, PrisonerModel>();
+            CreateMap<Prisoner, PrisonerModel>();
+            CreateMap<PrisonerModel, Prisoner>();
         }
     }
 }

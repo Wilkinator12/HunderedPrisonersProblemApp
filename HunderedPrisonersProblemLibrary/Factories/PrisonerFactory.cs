@@ -8,13 +8,13 @@ namespace HunderedPrisonersProblemLibrary.Factories
 {
     public class PrisonerFactory : IPrisonerFactory
     {
-        public List<PrisonerModel> CreatePrisoners(int numberOfPrisoners)
+        public List<Prisoner> CreatePrisoners(int numberOfPrisoners)
         {
-            var output = new List<PrisonerModel>();
+            var output = new List<Prisoner>();
 
             for (int i = 0; i < numberOfPrisoners; i++)
             {
-                var newPrisoner = new PrisonerModel { IdentityNumber = i + 1 };
+                var newPrisoner = new Prisoner { IdentityNumber = i + 1 };
 
                 output.Add(newPrisoner);
             }

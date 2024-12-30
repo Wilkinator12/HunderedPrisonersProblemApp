@@ -8,8 +8,8 @@ namespace WpfUI.Profiles
     {
         public BoxSelectionProfile()
         {
-            CreateMap<BoxSelectionModel, BoxSelectionWpfModel>();
-            CreateMap<BoxSelectionWpfModel, BoxSelectionModel>();
+            CreateMap<BoxSelection, BoxSelectionModel>();
+            CreateMap<BoxSelectionModel, BoxSelection>();
         }
     }
 }

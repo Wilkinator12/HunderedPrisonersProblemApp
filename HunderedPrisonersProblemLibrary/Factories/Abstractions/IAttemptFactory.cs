@@ -3,8 +3,8 @@ using System.Collections.Generic;
 
 namespace HunderedPrisonersProblemLibrary.Factories.Abstractions
 {
-    public interface IPrisonerAttemptFactory
+    public interface IAttemptFactory
     {
-        List<PrisonerAttemptModel> CreatePrisonerAttempts(List<PrisonerModel> prisoners);
+        List<Attempt> CreatePrisonerAttempts(List<Prisoner> prisoners);
     }
 }

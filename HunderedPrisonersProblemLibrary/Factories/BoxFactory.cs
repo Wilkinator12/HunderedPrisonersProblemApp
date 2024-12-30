@@ -16,16 +16,16 @@ namespace HunderedPrisonersProblemLibrary.Factories
             _rand = rand;
         }
 
-        public List<BoxModel> CreateBoxes(int numberOfBoxes)
+        public List<Box> CreateBoxes(int numberOfBoxes)
         {
-            var output = new List<BoxModel>();
+            var output = new List<Box>();
 
             var allContainedNumbers = Enumerable.Range(1, numberOfBoxes).ToList();
             allContainedNumbers.Shuffle(_rand);
 
             for (int i = 0; i < allContainedNumbers.Count; i++)
             {
-                var newBox = new BoxModel { LabelNumber = i + 1, SlipNumber = allContainedNumbers[i] };
+                var newBox = new Box { LabelNumber = i + 1, SlipNumber = allContainedNumbers[i] };
 
                 output.Add(newBox);
             }

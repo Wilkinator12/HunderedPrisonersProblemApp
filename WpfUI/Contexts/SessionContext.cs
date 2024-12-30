@@ -13,10 +13,10 @@ namespace WpfUI.Contexts
 {
     public class SessionContext : BindableBase, ISessionContext
     {
-        public ObservableCollection<PrisonerSimulationWpfModel> Simulations { get; set; } = new ObservableCollection<PrisonerSimulationWpfModel>();
+        public ObservableCollection<SimulationModel> Simulations { get; set; } = new ObservableCollection<SimulationModel>();
 
-        private PrisonerSimulationWpfModel? _selectedSimulation;
-        public PrisonerSimulationWpfModel? SelectedSimulation 
+        private SimulationModel? _selectedSimulation;
+        public SimulationModel? SelectedSimulation 
         {
             get => _selectedSimulation;
             set
@@ -25,8 +25,8 @@ namespace WpfUI.Contexts
             }
         }
 
-        private PrisonerAttemptWpfModel? _selectedPrisonerAttempt;
-        public PrisonerAttemptWpfModel? SelectedPrisonerAttempt
+        private AttemptModel? _selectedPrisonerAttempt;
+        public AttemptModel? SelectedPrisonerAttempt
         {
             get => _selectedPrisonerAttempt;
             set

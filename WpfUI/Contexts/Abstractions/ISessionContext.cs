@@ -11,9 +11,9 @@ namespace WpfUI.Contexts.Abstractions
 {
     public interface ISessionContext : INotifyPropertyChanged
     {
-        ObservableCollection<PrisonerSimulationWpfModel> Simulations { get; set; }
-        PrisonerSimulationWpfModel? SelectedSimulation { get; set; }
-        PrisonerAttemptWpfModel? SelectedPrisonerAttempt { get; set; }
+        ObservableCollection<SimulationModel> Simulations { get; set; }
+        SimulationModel? SelectedSimulation { get; set; }
+        AttemptModel? SelectedPrisonerAttempt { get; set; }
 
         bool IsSimulating { get; set; }
 

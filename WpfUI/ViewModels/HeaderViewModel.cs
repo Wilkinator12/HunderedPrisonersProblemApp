@@ -13,7 +13,7 @@ namespace WpfUI.ViewModels
     public class HeaderViewModel : BindableBase
     {
         public ObservableCollection<string> RiddleRules { get; set; }
-        public ObservableCollection<StrategyExplanationWpfModel> StrategyExplanations { get; set; }
+        public ObservableCollection<StrategyExplanation> StrategyExplanations { get; set; }
 
 
 

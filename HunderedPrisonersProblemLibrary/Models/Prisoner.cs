@@ -3,7 +3,7 @@ using System.Text;
 
 namespace HunderedPrisonersProblemLibrary.Models
 {
-    public class PrisonerModel
+    public class Prisoner
     {
         public int IdentityNumber { get; set; }
     }

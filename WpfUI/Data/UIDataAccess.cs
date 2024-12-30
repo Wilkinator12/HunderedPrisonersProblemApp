@@ -47,7 +47,7 @@ namespace WpfUI.Data
             return new ObservableCollection<string>(listOfRiddleRules);
         }
 
-        public ObservableCollection<StrategyExplanationWpfModel> GetStrategyExplanations()
+        public ObservableCollection<StrategyExplanation> GetStrategyExplanations()
         {
             string? fileName = _config.GetValue<string>(_strategyExplanationsFilePathName);
             if (fileName == null)
@@ -60,7 +60,7 @@ namespace WpfUI.Data
 
 
 
-            var output = new ObservableCollection<StrategyExplanationWpfModel>();
+            var output = new ObservableCollection<StrategyExplanation>();
 
 
             string[] fileRows = File.ReadAllLines(fileName);
@@ -68,7 +68,7 @@ namespace WpfUI.Data
             {
                 string[] cols = row.Split("::");
 
-                var newStrategyExplanation = new StrategyExplanationWpfModel { StrategyName = cols[0], Explanation = cols[1] };
+                var newStrategyExplanation = new StrategyExplanation { StrategyName = cols[0], Explanation = cols[1] };
 
                 output.Add(newStrategyExplanation);
             }

@@ -5,8 +5,9 @@ using System.Text;
 
 namespace HunderedPrisonersProblemLibrary.Factories.Abstractions
 {
-    public interface IPrisonerFactory
+    public interface ISimulationFactory
     {
-        List<Prisoner> CreatePrisoners(int numberOfPrisoners);
+        Simulation CreateSimulation(int numberOfPrisoners);
+        List<Simulation> CreateSimulations(int numberOfSimulations, int numberOfPrisoners);
     }
 }

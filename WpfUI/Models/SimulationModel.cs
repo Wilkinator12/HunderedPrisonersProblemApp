@@ -4,10 +4,10 @@ using WpfUI.Bases;
 
 namespace WpfUI.Models
 {
-    public class PrisonerSimulationWpfModel : BindableBase
+    public class SimulationModel : BindableBase
     {
-        private ObservableCollection<PrisonerWpfModel> _prisoners = new ObservableCollection<PrisonerWpfModel>();
-        public ObservableCollection<PrisonerWpfModel> Prisoners
+        private ObservableCollection<PrisonerModel> _prisoners = new ObservableCollection<PrisonerModel>();
+        public ObservableCollection<PrisonerModel> Prisoners
         {
             get => _prisoners;
             set
@@ -16,8 +16,8 @@ namespace WpfUI.Models
             }
         }
 
-        private BoxRoomWpfModel _boxRoom = null!;
-        public BoxRoomWpfModel BoxRoom
+        private BoxRoomModel _boxRoom = null!;
+        public BoxRoomModel BoxRoom
         {
             get => _boxRoom;
             set
@@ -26,8 +26,8 @@ namespace WpfUI.Models
             }
         }
 
-        private ObservableCollection<PrisonerAttemptWpfModel> _attempts = new ObservableCollection<PrisonerAttemptWpfModel>();
-        public ObservableCollection<PrisonerAttemptWpfModel> Attempts
+        private ObservableCollection<AttemptModel> _attempts = new ObservableCollection<AttemptModel>();
+        public ObservableCollection<AttemptModel> Attempts
         {
             get => _attempts;
             set
@@ -36,8 +36,8 @@ namespace WpfUI.Models
             }
         }
 
-        private PrisonerStrategy _strategyUsed;
-        public PrisonerStrategy StrategyUsed
+        private Strategy _strategyUsed;
+        public Strategy StrategyUsed
         {
             get => _strategyUsed;
             set

@@ -3,12 +3,12 @@ using System.Linq;
 
 namespace HunderedPrisonersProblemLibrary.Models
 {
-    public class BoxRoomModel
+    public class BoxRoom
     {
-        public List<BoxModel> Boxes { get; set; } = new List<BoxModel>();
+        public List<Box> Boxes { get; set; } = new List<Box>();
 
-		private Dictionary<int, BoxModel> _boxLabelDictionary;
-		public Dictionary<int, BoxModel> BoxLabelDictionary
+		private Dictionary<int, Box> _boxLabelDictionary;
+		public Dictionary<int, Box> BoxLabelDictionary
 		{
 			get
 			{

@@ -4,8 +4,8 @@ using HunderedPrisonersProblemLibrary.Logic.Analysis;
 using HunderedPrisonersProblemLibrary.Logic.Analysis.Abstractions;
 using HunderedPrisonersProblemLibrary.Logic.Simulation;
 using HunderedPrisonersProblemLibrary.Logic.Simulation.Abstractions;
-using HunderedPrisonersProblemLibrary.Logic.PrisonerAttempts;
-using HunderedPrisonersProblemLibrary.Logic.PrisonerAttempts.Abstractions;
+using HunderedPrisonersProblemLibrary.Logic.Attempts;
+using HunderedPrisonersProblemLibrary.Logic.Attempts.Abstractions;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -19,15 +19,15 @@ namespace Microsoft.Extensions.DependencyInjection
             services.AddTransient<IPrisonerFactory, PrisonerFactory>();
             services.AddTransient<IBoxFactory, BoxFactory>();
             services.AddTransient<IBoxRoomFactory, BoxRoomFactory>();
-            services.AddTransient<IPrisonerAttemptFactory, PrisonerAttemptFactory>();
-            services.AddTransient<IPrisonerSimulationFactory, PrisonerSimulationFactory>();
+            services.AddTransient<IAttemptFactory, AttemptFactory>();
+            services.AddTransient<ISimulationFactory, SimulationFactory>();
 
             services.AddTransient<IMultipleSimulationAnalyzer, MultipleSimulationAnalyzer>();
 
             services.AddTransient<IRiddleRules, RiddleRules>();
-            services.AddTransient<IPrisonerSimulationExecutor, PrisonerSimulationExecutor>();
+            services.AddTransient<ISimulationExecutor, SimulationExecutor>();
 
-            services.AddTransient<IPrisonerAttemptSimulatorManager, PrisonerAttemptSimulatorManager>();
+            services.AddTransient<IAttemptSimulatorManager, AttemptSimulatorManager>();
             services.AddTransient<RandomBoxAttemptSimulator>();
             services.AddTransient<FollowLoopAttemptSimulator>();
 

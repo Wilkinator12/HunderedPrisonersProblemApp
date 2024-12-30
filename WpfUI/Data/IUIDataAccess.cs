@@ -6,6 +6,6 @@ namespace WpfUI.Data
     public interface IUIDataAccess
     {
         ObservableCollection<string> GetRiddleRules();
-        ObservableCollection<StrategyExplanationWpfModel> GetStrategyExplanations();
+        ObservableCollection<StrategyExplanation> GetStrategyExplanations();
     }
 }

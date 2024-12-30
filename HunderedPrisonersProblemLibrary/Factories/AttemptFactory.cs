@@ -6,15 +6,15 @@ using System.Text;
 
 namespace HunderedPrisonersProblemLibrary.Factories
 {
-    public class PrisonerAttemptFactory : IPrisonerAttemptFactory
+    public class AttemptFactory : IAttemptFactory
     {
-        public List<PrisonerAttemptModel> CreatePrisonerAttempts(List<PrisonerModel> prisoners)
+        public List<Attempt> CreatePrisonerAttempts(List<Prisoner> prisoners)
         {
-            var output = new List<PrisonerAttemptModel>();
+            var output = new List<Attempt>();
 
             foreach (var prisoner in prisoners)
             {
-                var newAttempt = new PrisonerAttemptModel { AttemptingPrisoner = prisoner };
+                var newAttempt = new Attempt { AttemptingPrisoner = prisoner };
 
                 output.Add(newAttempt);
             }

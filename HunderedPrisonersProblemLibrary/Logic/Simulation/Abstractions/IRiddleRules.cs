@@ -7,6 +7,6 @@ namespace HunderedPrisonersProblemLibrary.Logic.Simulation.Abstractions
 {
     public interface IRiddleRules
     {
-        int GetNumberOfBoxesToCheck(BoxRoomModel boxRoom);
+        int GetNumberOfBoxesToCheck(BoxRoom boxRoom);
     }
 }

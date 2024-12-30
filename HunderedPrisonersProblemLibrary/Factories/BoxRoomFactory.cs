@@ -15,9 +15,9 @@ namespace HunderedPrisonersProblemLibrary.Factories
             _boxFactory = boxFactory;
         }
 
-        public BoxRoomModel CreateBoxRoom(int numberOfBoxes)
+        public BoxRoom CreateBoxRoom(int numberOfBoxes)
         {
-            return new BoxRoomModel { Boxes = _boxFactory.CreateBoxes(numberOfBoxes) };
+            return new BoxRoom { Boxes = _boxFactory.CreateBoxes(numberOfBoxes) };
         }
     }
 }

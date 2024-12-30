@@ -9,7 +9,7 @@ namespace HunderedPrisonersProblemLibrary.Logic.Analysis
 {
     public class MultipleSimulationAnalyzer : IMultipleSimulationAnalyzer
     {
-        public double GetSuccessRate(List<PrisonerSimulationModel> simulations)
+        public double GetSuccessRate(List<Models.Simulation> simulations)
         {
             if (simulations.Any() == false) return 0;
 

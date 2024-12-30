@@ -1,14 +1,14 @@
 ﻿using HunderedPrisonersProblemLibrary.Logic.Simulation.Abstractions;
-using HunderedPrisonersProblemLibrary.Logic.PrisonerAttempts.Abstractions;
+using HunderedPrisonersProblemLibrary.Logic.Attempts.Abstractions;
 using HunderedPrisonersProblemLibrary.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace HunderedPrisonersProblemLibrary.Logic.PrisonerAttempts
+namespace HunderedPrisonersProblemLibrary.Logic.Attempts
 {
-    public class FollowLoopAttemptSimulator : IPrisonerAttemptSimulator
+    public class FollowLoopAttemptSimulator : IAttemptSimulator
     {
         private readonly IRiddleRules _gameRules;
 
@@ -18,9 +18,9 @@ namespace HunderedPrisonersProblemLibrary.Logic.PrisonerAttempts
         }
 
 
-        public PrisonerAttemptModel ExecuteAttempt(BoxRoomModel boxRoom, PrisonerModel prisoner)
+        public Attempt ExecuteAttempt(BoxRoom boxRoom, Prisoner prisoner)
         {
-            var output = new PrisonerAttemptModel()
+            var output = new Attempt()
             {
                 AttemptingPrisoner = prisoner
             };
@@ -31,13 +31,13 @@ namespace HunderedPrisonersProblemLibrary.Logic.PrisonerAttempts
 
             for (int i = 0; i < numberOfBoxesToCheck; i++)
             {
-                if (!boxRoom.BoxLabelDictionary.TryGetValue(nextLabelNumberToCheck, out BoxModel currentBox))
+                if (!boxRoom.BoxLabelDictionary.TryGetValue(nextLabelNumberToCheck, out Box currentBox))
                 {
                     throw new InvalidOperationException($"Box label number {nextLabelNumberToCheck} was not found");
                 }
 
 
-                output.BoxSelections.Add(new BoxSelectionModel { SelectionNumber = i + 1, SelectedBox = currentBox });
+                output.BoxSelections.Add(new BoxSelection { SelectionNumber = i + 1, SelectedBox = currentBox });
 
                 if (currentBox.SlipNumber == prisoner.IdentityNumber)
                 {
@@ -53,7 +53,7 @@ namespace HunderedPrisonersProblemLibrary.Logic.PrisonerAttempts
             return output;
         }
 
-        public async Task<PrisonerAttemptModel> ExecuteAttemptAsync(BoxRoomModel boxRoom, PrisonerModel prisoner)
+        public async Task<Attempt> ExecuteAttemptAsync(BoxRoom boxRoom, Prisoner prisoner)
         {
             return ExecuteAttempt(boxRoom, prisoner);
         }

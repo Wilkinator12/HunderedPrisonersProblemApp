@@ -2,7 +2,7 @@
 
 namespace WpfUI.Models
 {
-    public class BoxWpfModel : BindableBase
+    public class BoxModel : BindableBase
 	{
 		private int _labelNumber;
 		public int LabelNumber

@@ -7,6 +7,6 @@ namespace HunderedPrisonersProblemLibrary.Logic.Analysis.Abstractions
 {
     public interface IMultipleSimulationAnalyzer
     {
-        double GetSuccessRate(List<PrisonerSimulationModel> simulations);
+        double GetSuccessRate(List<Models.Simulation> simulations);
     }
 }

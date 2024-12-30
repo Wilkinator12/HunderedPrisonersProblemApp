@@ -4,6 +4,6 @@ namespace HunderedPrisonersProblemLibrary.Factories.Abstractions
 {
     public interface IBoxRoomFactory
     {
-        BoxRoomModel CreateBoxRoom(int numberOfBoxes);
+        BoxRoom CreateBoxRoom(int numberOfBoxes);
     }
 }

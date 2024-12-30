@@ -2,7 +2,7 @@
 
 namespace WpfUI.Models
 {
-    public class BoxSelectionWpfModel : BindableBase
+    public class BoxSelectionModel : BindableBase
 	{
         private int _selectionNumber;
         public int SelectionNumber
@@ -14,8 +14,8 @@ namespace WpfUI.Models
             }
         }
 
-        private BoxWpfModel _selectedBox = null!;
-        public BoxWpfModel SelectedBox
+        private BoxModel _selectedBox = null!;
+        public BoxModel SelectedBox
         {
             get => _selectedBox;
             set

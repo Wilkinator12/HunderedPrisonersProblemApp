@@ -4,7 +4,7 @@ using System.Text;
 
 namespace HunderedPrisonersProblemLibrary.Models
 {
-    public enum PrisonerStrategy
+    public enum Strategy
     {
         CheckRandomBoxes,
         FollowLoops

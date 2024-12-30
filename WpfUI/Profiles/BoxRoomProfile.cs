@@ -8,8 +8,8 @@ namespace WpfUI.Profiles
     {
         public BoxRoomProfile()
         {
-            CreateMap<BoxRoomModel, BoxRoomWpfModel>();
-            CreateMap<BoxRoomWpfModel, BoxRoomModel>();
+            CreateMap<BoxRoom, BoxRoomModel>();
+            CreateMap<BoxRoomModel, BoxRoom>();
         }
     }
 }
