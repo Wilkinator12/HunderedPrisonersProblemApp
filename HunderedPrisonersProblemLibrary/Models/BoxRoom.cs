@@ -7,19 +7,18 @@ namespace HunderedPrisonersProblemLibrary.Models
     {
         public List<Box> Boxes { get; set; } = new List<Box>();
 
-		private Dictionary<int, Box> _boxLabelDictionary;
-		public Dictionary<int, Box> BoxLabelDictionary
+	private Dictionary<int, Box> _boxLabelDictionary;
+	public Dictionary<int, Box> BoxLabelDictionary
+	{
+		get
 		{
-			get
-			{
-                if (_boxLabelDictionary == null)
-                {
-                    _boxLabelDictionary = Boxes.ToDictionary(b => b.LabelNumber);
-                }
+                	if (_boxLabelDictionary == null)
+                	{
+                    		_boxLabelDictionary = Boxes.ToDictionary(b => b.LabelNumber);
+                	}
 
-                return _boxLabelDictionary;
-            }
-		}
-
+                	return _boxLabelDictionary;
+            	}
 	}
+    }
 }
