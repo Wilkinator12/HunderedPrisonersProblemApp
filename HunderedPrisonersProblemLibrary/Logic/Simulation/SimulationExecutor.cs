@@ -1,5 +1,5 @@
-﻿using HunderedPrisonersProblemLibrary.Logic.Simulation.Abstractions;
-using HunderedPrisonersProblemLibrary.Logic.Attempts.Abstractions;
+﻿using HunderedPrisonersProblemLibrary.Logic.SimulationLogic.Abstractions;
+using HunderedPrisonersProblemLibrary.Logic.AttemptLogic.Abstractions;
 using HunderedPrisonersProblemLibrary.Models;
 using System;
 using System.Collections.Generic;
@@ -7,19 +7,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Linq;
 
-namespace HunderedPrisonersProblemLibrary.Logic.Simulation
+namespace HunderedPrisonersProblemLibrary.Logic.SimulationLogic
 {
     public class SimulationExecutor : ISimulationExecutor
     {
         private readonly IAttemptSimulatorManager _attemptManager;
+        private readonly IRiddleRules _rules;
 
-        public SimulationExecutor(IAttemptSimulatorManager attemptManager)
+        public SimulationExecutor(IAttemptSimulatorManager attemptManager, IRiddleRules rules)
         {
             _attemptManager = attemptManager;
+            _rules = rules;
         }
 
 
-        public void ExecuteSimulation(Models.Simulation simulation, Strategy strategy)
+        public void ExecuteSimulation(Simulation simulation, Strategy strategy)
         {
             var attemptSimulator = _attemptManager.GetAttemptSimulator(strategy);
 
@@ -30,9 +32,10 @@ namespace HunderedPrisonersProblemLibrary.Logic.Simulation
             }
 
             simulation.StrategyUsed = strategy;
+            simulation.PrisonersSucceeded = _rules.PrisonersDidSucceed(simulation);
         }
 
-        public async Task ExecuteSimulationAsync(Models.Simulation simulation, Strategy strategy)
+        public async Task ExecuteSimulationAsync(Simulation simulation, Strategy strategy)
         {
             var attemptSimulator = _attemptManager.GetAttemptSimulator(strategy);
 
@@ -48,6 +51,7 @@ namespace HunderedPrisonersProblemLibrary.Logic.Simulation
 
 
             simulation.StrategyUsed = strategy;
+            simulation.PrisonersSucceeded = _rules.PrisonersDidSucceed(simulation);
         }
     }
 }

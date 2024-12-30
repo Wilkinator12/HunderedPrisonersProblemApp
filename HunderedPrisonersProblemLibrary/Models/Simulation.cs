@@ -9,6 +9,6 @@ namespace HunderedPrisonersProblemLibrary.Models
         public BoxRoom BoxRoom { get; set; }
         public List<Attempt> Attempts { get; set; } = new List<Attempt>();
         public Strategy StrategyUsed { get; set; } = Strategy.CheckRandomBoxes;
-        public bool PrisonersSucceeded => Attempts.All(a => a.HasSucceeded);
+        public bool PrisonersSucceeded { get; set; } = false;
     }
 }

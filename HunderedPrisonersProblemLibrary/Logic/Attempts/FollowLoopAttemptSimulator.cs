@@ -1,12 +1,12 @@
-﻿using HunderedPrisonersProblemLibrary.Logic.Simulation.Abstractions;
-using HunderedPrisonersProblemLibrary.Logic.Attempts.Abstractions;
+﻿using HunderedPrisonersProblemLibrary.Logic.SimulationLogic.Abstractions;
+using HunderedPrisonersProblemLibrary.Logic.AttemptLogic.Abstractions;
 using HunderedPrisonersProblemLibrary.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace HunderedPrisonersProblemLibrary.Logic.Attempts
+namespace HunderedPrisonersProblemLibrary.Logic.AttemptLogic
 {
     public class FollowLoopAttemptSimulator : IAttemptSimulator
     {
@@ -20,10 +20,7 @@ namespace HunderedPrisonersProblemLibrary.Logic.Attempts
 
         public Attempt ExecuteAttempt(BoxRoom boxRoom, Prisoner prisoner)
         {
-            var output = new Attempt()
-            {
-                AttemptingPrisoner = prisoner
-            };
+            var output = new Attempt { AttemptingPrisoner = prisoner };
 
 
             int numberOfBoxesToCheck = _gameRules.GetNumberOfBoxesToCheck(boxRoom);

@@ -1,12 +1,12 @@
-﻿using HunderedPrisonersProblemLibrary.Logic.Simulation.Abstractions;
-using HunderedPrisonersProblemLibrary.Logic.Attempts.Abstractions;
+﻿using HunderedPrisonersProblemLibrary.Logic.SimulationLogic.Abstractions;
+using HunderedPrisonersProblemLibrary.Logic.AttemptLogic.Abstractions;
 using HunderedPrisonersProblemLibrary.Models;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace HunderedPrisonersProblemLibrary.Logic.Attempts
+namespace HunderedPrisonersProblemLibrary.Logic.AttemptLogic
 {
     public class AttemptSimulatorManager : IAttemptSimulatorManager
     {

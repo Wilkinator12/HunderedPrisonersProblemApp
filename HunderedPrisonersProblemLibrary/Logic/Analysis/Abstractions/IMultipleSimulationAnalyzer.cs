@@ -3,10 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace HunderedPrisonersProblemLibrary.Logic.Analysis.Abstractions
+namespace HunderedPrisonersProblemLibrary.Logic.AnalysisLogic.Abstractions
 {
     public interface IMultipleSimulationAnalyzer
     {
-        double GetSuccessRate(List<Models.Simulation> simulations);
+        double GetSuccessRate(List<Simulation> simulations);
     }
 }

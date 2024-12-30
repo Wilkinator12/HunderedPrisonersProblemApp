@@ -1,5 +1,5 @@
 ﻿using HunderedPrisonersProblemLibrary.Factories.Abstractions;
-using HunderedPrisonersProblemLibrary.Logic.Simulation.Abstractions;
+using HunderedPrisonersProblemLibrary.Logic.SimulationLogic.Abstractions;
 using HunderedPrisonersProblemLibrary.Models;
 using System.Collections.ObjectModel;
 using WpfUI.Bases;

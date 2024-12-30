@@ -1,6 +1,6 @@
 ﻿using HunderedPrisonersProblemLibrary.Models;
 
-namespace HunderedPrisonersProblemLibrary.Logic.Attempts.Abstractions
+namespace HunderedPrisonersProblemLibrary.Logic.AttemptLogic.Abstractions
 {
     public interface IAttemptSimulatorManager
     {

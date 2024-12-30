@@ -1,6 +1,6 @@
 ﻿using HunderedPrisonersProblemLibrary.Factories.Abstractions;
-using HunderedPrisonersProblemLibrary.Logic.Analysis.Abstractions;
-using HunderedPrisonersProblemLibrary.Logic.Simulation.Abstractions;
+using HunderedPrisonersProblemLibrary.Logic.AnalysisLogic.Abstractions;
+using HunderedPrisonersProblemLibrary.Logic.SimulationLogic.Abstractions;
 using HunderedPrisonersProblemLibrary.Models;
 using Microsoft.Extensions.DependencyInjection;
 

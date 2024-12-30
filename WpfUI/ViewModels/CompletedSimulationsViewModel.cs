@@ -1,4 +1,4 @@
-﻿using HunderedPrisonersProblemLibrary.Logic.Analysis.Abstractions;
+﻿using HunderedPrisonersProblemLibrary.Logic.AnalysisLogic.Abstractions;
 using HunderedPrisonersProblemLibrary.Models;
 using System;
 using System.Collections.Generic;

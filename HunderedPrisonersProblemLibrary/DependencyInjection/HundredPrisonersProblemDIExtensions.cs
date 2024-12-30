@@ -1,11 +1,11 @@
 ﻿using HunderedPrisonersProblemLibrary.Factories;
 using HunderedPrisonersProblemLibrary.Factories.Abstractions;
-using HunderedPrisonersProblemLibrary.Logic.Analysis;
-using HunderedPrisonersProblemLibrary.Logic.Analysis.Abstractions;
-using HunderedPrisonersProblemLibrary.Logic.Simulation;
-using HunderedPrisonersProblemLibrary.Logic.Simulation.Abstractions;
-using HunderedPrisonersProblemLibrary.Logic.Attempts;
-using HunderedPrisonersProblemLibrary.Logic.Attempts.Abstractions;
+using HunderedPrisonersProblemLibrary.Logic.AnalysisLogic;
+using HunderedPrisonersProblemLibrary.Logic.AnalysisLogic.Abstractions;
+using HunderedPrisonersProblemLibrary.Logic.SimulationLogic;
+using HunderedPrisonersProblemLibrary.Logic.SimulationLogic.Abstractions;
+using HunderedPrisonersProblemLibrary.Logic.AttemptLogic;
+using HunderedPrisonersProblemLibrary.Logic.AttemptLogic.Abstractions;
 using System;
 using System.Collections.Generic;
 using System.Text;

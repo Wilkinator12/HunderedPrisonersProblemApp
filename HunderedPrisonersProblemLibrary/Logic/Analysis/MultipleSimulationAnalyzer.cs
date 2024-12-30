@@ -1,15 +1,15 @@
-﻿using HunderedPrisonersProblemLibrary.Logic.Analysis.Abstractions;
+﻿using HunderedPrisonersProblemLibrary.Logic.AnalysisLogic.Abstractions;
 using HunderedPrisonersProblemLibrary.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace HunderedPrisonersProblemLibrary.Logic.Analysis
+namespace HunderedPrisonersProblemLibrary.Logic.AnalysisLogic
 {
     public class MultipleSimulationAnalyzer : IMultipleSimulationAnalyzer
     {
-        public double GetSuccessRate(List<Models.Simulation> simulations)
+        public double GetSuccessRate(List<Simulation> simulations)
         {
             if (simulations.Any() == false) return 0;
 

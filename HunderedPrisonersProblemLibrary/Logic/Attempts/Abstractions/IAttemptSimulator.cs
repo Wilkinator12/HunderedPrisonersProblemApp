@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HunderedPrisonersProblemLibrary.Logic.Attempts.Abstractions
+namespace HunderedPrisonersProblemLibrary.Logic.AttemptLogic.Abstractions
 {
     public interface IAttemptSimulator
     {
