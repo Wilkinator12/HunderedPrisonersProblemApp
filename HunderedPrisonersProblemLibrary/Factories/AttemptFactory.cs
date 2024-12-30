@@ -8,7 +8,7 @@ namespace HunderedPrisonersProblemLibrary.Factories
 {
     public class AttemptFactory : IAttemptFactory
     {
-        public List<Attempt> CreatePrisonerAttempts(List<Prisoner> prisoners)
+        public List<Attempt> CreateAttempts(List<Prisoner> prisoners)
         {
             var output = new List<Attempt>();
 

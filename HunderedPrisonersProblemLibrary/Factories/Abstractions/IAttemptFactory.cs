@@ -5,6 +5,6 @@ namespace HunderedPrisonersProblemLibrary.Factories.Abstractions
 {
     public interface IAttemptFactory
     {
-        List<Attempt> CreatePrisonerAttempts(List<Prisoner> prisoners);
+        List<Attempt> CreateAttempts(List<Prisoner> prisoners);
     }
 }

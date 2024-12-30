@@ -1,5 +1,6 @@
 100 prisoners are numbered from 1 - 100
-Slips with their numbers are randomly placed in 100 boxes in a room
+100 boxes labelled from 1 - 100 are placed in a room
+Each of the prisoner's numbers are written on slips and placed randomly in the boxes, one per box
 Each prisoner may enter the room one at a time and check up to 50 boxes
 They must leave the room exactly as they found it and can't communicate with the others after
 If all 100 prisoners find their number during their turn in the room, they will all be freed. But if even one fails, they will all be executed

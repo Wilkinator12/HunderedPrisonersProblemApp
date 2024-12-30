@@ -4,6 +4,6 @@ namespace HunderedPrisonersProblemLibrary.Logic.Attempts.Abstractions
 {
     public interface IAttemptSimulatorManager
     {
-        IAttemptSimulator GetPrisonerAttemptSimulator(Strategy strategy);
+        IAttemptSimulator GetAttemptSimulator(Strategy strategy);
     }
 }

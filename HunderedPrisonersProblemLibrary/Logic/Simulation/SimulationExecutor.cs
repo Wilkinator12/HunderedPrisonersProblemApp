@@ -21,7 +21,7 @@ namespace HunderedPrisonersProblemLibrary.Logic.Simulation
 
         public void ExecuteSimulation(Models.Simulation simulation, Strategy strategy)
         {
-            var attemptSimulator = _attemptManager.GetPrisonerAttemptSimulator(strategy);
+            var attemptSimulator = _attemptManager.GetAttemptSimulator(strategy);
 
             foreach (var prisoner in simulation.Prisoners)
             {
@@ -34,7 +34,7 @@ namespace HunderedPrisonersProblemLibrary.Logic.Simulation
 
         public async Task ExecuteSimulationAsync(Models.Simulation simulation, Strategy strategy)
         {
-            var attemptSimulator = _attemptManager.GetPrisonerAttemptSimulator(strategy);
+            var attemptSimulator = _attemptManager.GetAttemptSimulator(strategy);
 
             var attemptTasks = simulation.Prisoners.Select(prisoner =>
             {

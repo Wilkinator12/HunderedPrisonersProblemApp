@@ -17,7 +17,7 @@ namespace HunderedPrisonersProblemLibrary.Logic.Attempts
             _serviceProvider = serviceProvider;
         }
 
-        public IAttemptSimulator GetPrisonerAttemptSimulator(Strategy strategy)
+        public IAttemptSimulator GetAttemptSimulator(Strategy strategy)
         {
             switch (strategy)
             {
