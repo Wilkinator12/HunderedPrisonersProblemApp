@@ -11,7 +11,7 @@ Problem explanation:
 - They must leave the room exactly as they found it and can't communicate with the others after
 - If all 100 prisoners find their number during their turn in the room, they will all be freed. But if even one fails, they will all be executed
 - The prisoners may strategize before the challenge begins
-* Note that a strategy where boxes are checked randomly yields a near 0% success rate.
+** Note that a strategy where boxes are checked randomly yields a near 0% success rate.
 
 
 "Following loops" solution explanation:
