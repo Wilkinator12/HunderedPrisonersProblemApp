@@ -1,4 +1,6 @@
-This app simulates the "Hundred Prisoner Problem" in an attempt to prove that the "following loops" solution does yield a 30% success rate.
+The Hundred Prisoners Problem App
+
+This is a WPF app that simulates the "Hundred Prisoner Problem" in an attempt to prove that the "following loops" solution does yield a 30% success rate.
 Please find the explanation for the problem and the solution below.
 
 
