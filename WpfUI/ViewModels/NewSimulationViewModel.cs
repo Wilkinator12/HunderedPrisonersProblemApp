@@ -54,13 +54,13 @@ namespace WpfUI.ViewModels
             }
         }
 
-        private Strategy? _selectedPrisonerStrategy;
-        public Strategy? SelectedPrisonerStrategy
+        private Strategy? _selectedStrategy;
+        public Strategy? SelectedStrategy
         {
-            get => _selectedPrisonerStrategy;
+            get => _selectedStrategy;
             set 
             { 
-                SetProperty(ref _selectedPrisonerStrategy, value);
+                SetProperty(ref _selectedStrategy, value);
                 RunSimulationCommand.RaiseCanExecuteChanged();
             }
         }
@@ -91,16 +91,18 @@ namespace WpfUI.ViewModels
 
         private async Task RunSimulationsAsync()
         {
-            var simulationModels = _simulationFactory.CreateSimulations(SimulationQuantity, PrisonerQuantity);
+            var simulations = _simulationFactory.CreateSimulations(SimulationQuantity, PrisonerQuantity);
 
-            if (SelectedPrisonerStrategy != null)
+            if (SelectedStrategy is Strategy selectedStrategy)
             {
                 SessionContext.IsSimulating = true;
 
 
-                var simulationTasks = simulationModels.Select(simulation => Task.Run(async () =>
+                _simulationExecutor.SetStrategyToUse(selectedStrategy);
+
+                var simulationTasks = simulations.Select(simulation => Task.Run(async () =>
                 {
-                    await _simulationExecutor.ExecuteSimulationAsync(simulation, (Strategy)SelectedPrisonerStrategy);
+                    await _simulationExecutor.ExecuteSimulationAsync(simulation);
 
                     return App.Mapper.Map<SimulationModel>(simulation);
                 }));
@@ -121,7 +123,7 @@ namespace WpfUI.ViewModels
         {
             return SimulationQuantity > 0 && 
                    PrisonerQuantity > 0 && 
-                   SelectedPrisonerStrategy != null &&
+                   SelectedStrategy != null &&
                    SessionContext.IsSimulating == false;
         }
     }

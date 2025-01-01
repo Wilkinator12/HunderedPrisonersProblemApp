@@ -35,7 +35,7 @@
 
                     <Label Content="Prisoner Strategy: "/>
                     <ComboBox ItemsSource="{Binding PrisonerStrategies}"
-                              SelectedItem="{Binding SelectedPrisonerStrategy}"
+                              SelectedItem="{Binding SelectedStrategy}"
                               VerticalContentAlignment="Center"
                               Width="200"/>
 

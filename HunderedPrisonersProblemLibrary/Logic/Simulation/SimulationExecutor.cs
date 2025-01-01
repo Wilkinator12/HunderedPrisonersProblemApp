@@ -14,31 +14,36 @@ namespace HunderedPrisonersProblemLibrary.Logic.SimulationLogic
         private readonly IAttemptSimulatorManager _attemptManager;
         private readonly IRiddleRules _rules;
 
+
+        private IAttemptSimulator attemptSimulator;
+
+
+        public Strategy StrategyToUse { get; private set; }
+
+
         public SimulationExecutor(IAttemptSimulatorManager attemptManager, IRiddleRules rules)
         {
             _attemptManager = attemptManager;
             _rules = rules;
+
+            SetStrategyToUse(Strategy.CheckRandomBoxes);
         }
 
 
-        public void ExecuteSimulation(Simulation simulation, Strategy strategy)
+        public void ExecuteSimulation(Simulation simulation)
         {
-            var attemptSimulator = _attemptManager.GetAttemptSimulator(strategy);
-
             foreach (var prisoner in simulation.Prisoners)
             {
                 var attempt = attemptSimulator.ExecuteAttempt(simulation.BoxRoom, prisoner);
                 simulation.Attempts.Add(attempt);
             }
 
-            simulation.StrategyUsed = strategy;
+            simulation.StrategyUsed = StrategyToUse;
             simulation.PrisonersSucceeded = _rules.PrisonersDidSucceed(simulation);
         }
 
-        public async Task ExecuteSimulationAsync(Simulation simulation, Strategy strategy)
+        public async Task ExecuteSimulationAsync(Simulation simulation)
         {
-            var attemptSimulator = _attemptManager.GetAttemptSimulator(strategy);
-
             var attemptTasks = simulation.Prisoners.Select(prisoner =>
             {
                 return attemptSimulator.ExecuteAttemptAsync(simulation.BoxRoom, prisoner);
@@ -50,8 +55,14 @@ namespace HunderedPrisonersProblemLibrary.Logic.SimulationLogic
             simulation.Attempts.AddRange(attempts);
 
 
-            simulation.StrategyUsed = strategy;
+            simulation.StrategyUsed = StrategyToUse;
             simulation.PrisonersSucceeded = _rules.PrisonersDidSucceed(simulation);
+        }
+
+        public void SetStrategyToUse(Strategy strategy)
+        {
+            StrategyToUse = strategy;
+            attemptSimulator = _attemptManager.GetAttemptSimulator(StrategyToUse);
         }
     }
 }

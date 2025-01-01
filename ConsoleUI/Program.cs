@@ -26,7 +26,8 @@ namespace ConsoleUI
             for (int i = 0; i < numberOfSimulations; i++)
             {
                 var simulation = simFactory!.CreateSimulation(100);
-                simulationExecutor!.ExecuteSimulation(simulation, Strategy.FollowLoops);
+                simulationExecutor!.SetStrategyToUse(Strategy.FollowLoops);
+                simulationExecutor!.ExecuteSimulation(simulation);
 
                 simulations.Add(simulation);
             }

@@ -10,12 +10,12 @@ namespace HunderedPrisonersProblemLibrary.Logic.AttemptLogic
 {
     public class RandomBoxAttemptSimulator : IAttemptSimulator
     {
-        private readonly IRiddleRules _gameRules;
+        private readonly IRiddleRules _rules;
         private readonly Random _rand;
 
-        public RandomBoxAttemptSimulator(IRiddleRules gameRules, Random rand)
+        public RandomBoxAttemptSimulator(IRiddleRules rules, Random rand)
         {
-            _gameRules = gameRules;
+            _rules = rules;
             _rand = rand;
         }
 
@@ -25,7 +25,7 @@ namespace HunderedPrisonersProblemLibrary.Logic.AttemptLogic
             var output = new Attempt { AttemptingPrisoner = prisoner };
 
 
-            int numberOfBoxesToCheck = _gameRules.GetNumberOfBoxesToCheck(boxRoom);
+            int numberOfBoxesToCheck = _rules.GetNumberOfBoxesToCheck(boxRoom);
             var boxesLeftToCheck = new List<Box>(boxRoom.Boxes);
 
             for (int i = 0; i < numberOfBoxesToCheck; i++)

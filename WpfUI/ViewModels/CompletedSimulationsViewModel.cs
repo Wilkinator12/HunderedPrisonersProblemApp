@@ -61,9 +61,9 @@ namespace WpfUI.ViewModels
 
         private void SessionContext_SimulationBatchChange(object? sender, EventArgs e)
         {
-            var simulationModels = App.Mapper.Map<List<Simulation>>(SessionContext.Simulations);
+            var simulations = App.Mapper.Map<List<Simulation>>(SessionContext.Simulations);
 
-            SuccessRate = _multipleSimulationAnalyzer.GetSuccessRate(simulationModels);
+            SuccessRate = _multipleSimulationAnalyzer.GetSuccessRate(simulations);
         }
     }
 }

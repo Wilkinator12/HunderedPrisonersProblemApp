@@ -9,9 +9,9 @@ namespace WpfUI.Models
         public PrisonerModel AttemptingPrisoner
         {
             get => _attemptingPrisoner;
-            set 
-            { 
-                SetProperty(ref _attemptingPrisoner, value); 
+            set
+            {
+                SetProperty(ref _attemptingPrisoner, value);
             }
         }
 

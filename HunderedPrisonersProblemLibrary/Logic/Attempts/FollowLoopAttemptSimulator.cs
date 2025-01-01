@@ -5,16 +5,19 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
 
 namespace HunderedPrisonersProblemLibrary.Logic.AttemptLogic
 {
     public class FollowLoopAttemptSimulator : IAttemptSimulator
     {
-        private readonly IRiddleRules _gameRules;
+        private readonly IRiddleRules _rules;
+        private readonly ILogger<FollowLoopAttemptSimulator> _logger;
 
-        public FollowLoopAttemptSimulator(IRiddleRules gameRules)
+        public FollowLoopAttemptSimulator(IRiddleRules rules, ILogger<FollowLoopAttemptSimulator> logger)
         {
-            _gameRules = gameRules;
+            _rules = rules;
+           _logger = logger;
         }
 
 
@@ -23,14 +26,16 @@ namespace HunderedPrisonersProblemLibrary.Logic.AttemptLogic
             var output = new Attempt { AttemptingPrisoner = prisoner };
 
 
-            int numberOfBoxesToCheck = _gameRules.GetNumberOfBoxesToCheck(boxRoom);
+            int numberOfBoxesToCheck = _rules.GetNumberOfBoxesToCheck(boxRoom);
             int nextLabelNumberToCheck = prisoner.IdentityNumber;
 
             for (int i = 0; i < numberOfBoxesToCheck; i++)
             {
                 if (!boxRoom.BoxLabelDictionary.TryGetValue(nextLabelNumberToCheck, out Box currentBox))
                 {
-                    throw new InvalidOperationException($"Box label number {nextLabelNumberToCheck} was not found");
+                    string message = $"Box label number {nextLabelNumberToCheck} was not found";
+                    _logger.Log(LogLevel.Error, message);
+                    throw new InvalidOperationException();
                 }
 
 

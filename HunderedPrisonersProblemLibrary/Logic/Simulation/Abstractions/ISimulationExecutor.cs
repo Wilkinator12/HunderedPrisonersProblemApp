@@ -8,7 +8,8 @@ namespace HunderedPrisonersProblemLibrary.Logic.SimulationLogic.Abstractions
 {
     public interface ISimulationExecutor
     {
-        void ExecuteSimulation(Models.Simulation simulation, Strategy strategy);
-        Task ExecuteSimulationAsync(Models.Simulation simulation, Strategy strategy);
+        void ExecuteSimulation(Models.Simulation simulation);
+        Task ExecuteSimulationAsync(Models.Simulation simulation);
+        void SetStrategyToUse(Strategy strategy);
     }
 }
