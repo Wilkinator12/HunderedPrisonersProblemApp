@@ -20,6 +20,11 @@ Please find the explanation for the problem and the solution at the bottom.
 - Unit Tests (used modestly--this is an area that I need more practice with)
 
 
+## Local Dependencies
+### CommonLibrary
+This is a library that I use for various, common C# needs. Most specifically, for this project, it adds a Shuffle extension method  to IList<T> to make it easier to randomize the slip numbers placed in each box.
+
+
 ## Problem explanation
 
 - 100 prisoners are numbered from 1 - 100
