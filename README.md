@@ -5,6 +5,12 @@ Please find the explanation for the problem and the solution below.
 
 
 
+## Current Features:
+- Choose the number of simulations and the number of prisoners per simulation, then run the simulations
+- View the list of completed simulations to see which were successful
+- View the list of attempts made by each prisoner to see whether they succeeded or not
+- View each individual attempt to see which boxes the prisoner checked and which slip number they found inside
+
 ## Problem explanation:
 
 - 100 prisoners are numbered from 1 - 100
