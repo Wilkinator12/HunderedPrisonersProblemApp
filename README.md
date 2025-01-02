@@ -1,11 +1,11 @@
-The Hundred Prisoners Problem App
+# The Hundred Prisoners Problem App
 
 This is a WPF app that simulates the "Hundred Prisoner Problem" in an attempt to prove that the "following loops" solution does yield a 30% success rate.
 Please find the explanation for the problem and the solution below.
 
 
 
-Problem explanation:
+## Problem explanation:
 
 - 100 prisoners are numbered from 1 - 100
 - 100 boxes labelled from 1 - 100 are placed in a room
@@ -19,6 +19,6 @@ Problem explanation:
 
 
 
-"Following loops" solution explanation:
+## "Following loops" solution explanation:
 
 - Each prisoner first looks for the box labelled with their own number. If it contains their number, they succeed. If not, they go to the box labelled with the number they did find. They follow this pattern until they find their number or reach 50 boxes. The odds of success is near 30%.
