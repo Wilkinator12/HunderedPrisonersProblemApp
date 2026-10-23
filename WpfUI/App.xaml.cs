@@ -43,7 +43,7 @@ namespace WpfUI
             services.AddSingleton(config);
 
             services.AddHundredPrisonersProblemLibrary();
-            services.AddAutoMapper(typeof(App));
+            services.AddAutoMapper(_ => { }, typeof(App));
 
 
             services.AddTransient<MainWindow>();
