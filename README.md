@@ -7,7 +7,7 @@ Please find the explanation for the problem and the solution at the bottom.
 ## Current Features
 - Choose the number of simulations and the number of prisoners per simulation, then run the simulations
 - View the list of completed simulations to see which were successful
-- View the list of attempts made by each prisoner to see whether they succeeded or not
+- View the list of attempts made by each prisoner in a selected simulation to see whether they succeeded or not
 - View each individual attempt to see which boxes the prisoner checked and which slip number they found inside
 
 
@@ -18,6 +18,11 @@ Please find the explanation for the problem and the solution at the bottom.
 - Logging
 - Events
 - Unit Tests (used modestly--this is an area that I need more practice with)
+
+
+## Local Dependencies
+### CommonLibrary
+This is a library that I use for various, common C# needs. Most specifically, for this project, it adds a Shuffle extension method  to IList<T> to make it easier to randomize the slip numbers placed in each box.
 
 
 ## Problem explanation
